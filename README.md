@@ -74,6 +74,12 @@ Digunakan untuk mendapatkan token JWT.
 
 **GET** `/create-session/:name`
 
+##### Headers:
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+
 - Membuat session baru dengan nama tertentu dan menghasilkan QR code jika belum login.
 
 ---
@@ -81,6 +87,12 @@ Digunakan untuk mendapatkan token JWT.
 ### 📄 Daftar Semua Session
 
 **GET** `/sessions`
+
+##### Headers:
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
 
 - Melihat semua sesi WhatsApp yang tersedia dan status koneksinya.
 
@@ -91,6 +103,12 @@ Digunakan untuk mendapatkan token JWT.
 ### ✉️ Kirim Pesan ke Nomor WhatsApp
 
 **POST** `/send-message`
+
+##### Headers:
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
 
 #### Request Body:
 ```json
@@ -108,6 +126,12 @@ Digunakan untuk mendapatkan token JWT.
 #### 🔍 List Group
 
 **GET** `/groups/:name`
+
+##### Headers:
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
 
 #### 🚀 Kirim Pesan Grup
 
@@ -133,6 +157,12 @@ Content-Type: application/json
 ## 🚪 Logout WhatsApp
 
 **GET** `/logout-wa/:name`
+
+##### Headers:
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
 
 Digunakan untuk mengakhiri sesi WhatsApp.
 
