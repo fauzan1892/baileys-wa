@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "e32d249e-5986-4f5e-9311-cd19caa08544",
+		"name": "Baileys WA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12574598"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Session",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/create-session/:name",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"create-session",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Session",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"codekop_test\",\r\n  \"number\": \"6289618173609\",\r\n  \"message\": \"Halo dari API\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/sessions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message Group",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"codekop_test\",\r\n  \"groupJid\": \"1234567890-xxxx@g.us\",\r\n  \"message\": \"Halo Gais ini dari API\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/send-group",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"send-group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Group",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"codekop_test\",\r\n  \"number\": \"6289618173609\",\r\n  \"message\": \"Halo dari API\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/groups/codekop_test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"groups",
+						"codekop_test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message PM",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"codekop_test\",\r\n  \"number\": \"628xxxx\",\r\n  \"message\": \"Halo dari API\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/send-message",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"send-message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout WA",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/logout-wa/:name",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"logout-wa",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
